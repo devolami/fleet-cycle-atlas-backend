@@ -1,0 +1,12 @@
+# Target Python version
+target-version = "py314"
+
+[lint]
+# Enable specific rules
+# E = Error, F = Pyflakes, I = Isort (imports), DJ = Django specific
+select = ["E", "F", "I", "DJ"]
+ignore = []
+
+[format]
+quote-style = "double"
+indent-style = "space"
