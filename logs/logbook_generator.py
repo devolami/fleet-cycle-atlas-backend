@@ -8,7 +8,7 @@ class LogbookGenerator:
         self.total_dist = total_dist
         self.total_driving_required_hrs = total_time_mins / self.config.MINUTES_PER_HOUR
         self.current_cycle_hour = current_cycle_hour
-        self.mph = total_dist / self.total_driving_required_hrs if total_dist > 0 else 0
+        self.mph = (total_dist / self.total_driving_required_hrs) if self.total_driving_required_hrs > 0 else 0
                 
         self.logbooks = []
         self.current_day_log = self._initialize_new_day_dict()
@@ -92,9 +92,8 @@ class LogbookGenerator:
             self.current_day_log["logbook"].append({"hour": self.state.current_hour_of_day, "row": "off-duty", "action": action})
         
         if duration >= self.config.MANDATORY_BREAK_DURATION: self.state.hrs_since_last_break = 0
+        
     def _log_on_duty(self, duration: float, action: str):
-        # On-duty tasks are usually short (0.5h), so they rarely cross midnight, 
-        # but for robustness we check anyway.
         remaining_in_day = self.config.HOURS_IN_DAY - self.state.current_hour_of_day
         if duration > remaining_in_day:
             self.current_day_log["logbook"].append({"hour": self.state.current_hour_of_day, "row": "on-duty"})

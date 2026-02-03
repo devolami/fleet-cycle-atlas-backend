@@ -9,3 +9,10 @@ dependencies = [
     "django-cors-headers>=4.9.0",
     "djangorestframework>=3.16.1",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-django>=4.11.1",
+    "pytest-watch>=4.2.0",
+]
