@@ -122,6 +122,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 ALLOWED_HOSTS =[
-    "https://fleet-cycle-atlas-backend-production.up.railway.app",
+    "fleet-cycle-atlas-backend-production.up.railway.app",
     "127.0.0.1"
 ]
