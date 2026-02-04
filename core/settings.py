@@ -122,6 +122,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 ALLOWED_HOSTS =[
-    "fw8-bold-feynman.circumeo-apps.net",
+    "https://fleet-cycle-atlas-backend-production.up.railway.app",
     "127.0.0.1"
 ]
